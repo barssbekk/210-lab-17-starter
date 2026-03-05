@@ -122,7 +122,7 @@ void addFront(Node *&head, const float value) {
         newNode->next = nullptr;
     } else {
         newNode->value = value;
-        newNode->next = head;
-        head = newNode;
+        newNode->next = head; // point to old head
+        head = newNode; // move head to new node, and new node is new head
     }
 }
