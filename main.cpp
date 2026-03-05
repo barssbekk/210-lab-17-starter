@@ -9,7 +9,7 @@ struct Node {
 };
 
 void output(Node *);
-void addFront(Node *);
+void addFront(Node *, const float);
 
 int main() {
     Node *head = nullptr;
@@ -114,15 +114,15 @@ void output(Node * hd) {
     cout << endl;
 }
 
-void addFront(Node *head, float value) {
+void addFront(Node *&head, const float value) {
     Node* newNode = new Node;
     if (!head) {
         head = newNode;
         newNode->value = value;
         newNode->next = nullptr;
     } else {
-
+        newNode->value = value;
+        newNode->next = head;
+        head = newNode;
     }
-    newNode->value = value;
-
 }
