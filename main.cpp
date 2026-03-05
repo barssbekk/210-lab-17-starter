@@ -115,5 +115,14 @@ void output(Node * hd) {
 }
 
 void addFront(Node *head, float value) {
-    Node* newNode{head};
+    Node* newNode = new Node;
+    if (!head) {
+        head = newNode;
+        newNode->value = value;
+        newNode->next = nullptr;
+    } else {
+
+    }
+    newNode->value = value;
+
 }
