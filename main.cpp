@@ -1,3 +1,4 @@
+// COMSC-210 | Lab 17 | Barsbek
 #include <iostream>
 using namespace std;
 
@@ -39,7 +40,6 @@ int main() {
 
     // traverse that many times and delete that node
     current = head;
-    Node *prev = head;
     deleteNode(head, entry);
     // at this point, delete current and reroute pointers
     output(head);
@@ -79,6 +79,8 @@ void output(Node * hd) {
     cout << endl;
 }
 
+// adds a node to the front of the list
+// arguments: head pointer, value to add
 void addFront(Node *&head, const float value) {
     Node* newNode = new Node;
     if (!head) {
@@ -92,6 +94,8 @@ void addFront(Node *&head, const float value) {
     }
 }
 
+// deletes a node at a given position
+// arguments: head pointer, position of node
 void deleteNode(Node *&head, const int position) {
     Node *current = head;
     Node *prev = head;
@@ -109,6 +113,8 @@ void deleteNode(Node *&head, const int position) {
     }
 }
 
+// inserts a node after a given position
+// arguments: head pointer, position, value to insert
 void insertNode(Node*& head, const int position, const float value) {
     Node* current = head;
     Node* prev = head;
@@ -127,6 +133,8 @@ void insertNode(Node*& head, const int position, const float value) {
     prev->next = newNode;
 }
 
+// adds a node to the end of the list
+// arguments: head pointer, value to add
 void addTail(Node *&head, float value) {
     Node* newNode = new Node;
     newNode->value = value;
@@ -143,6 +151,8 @@ void addTail(Node *&head, float value) {
     }
 }
 
+// deletes the entire linked list
+// arguments: head pointer
 void deleteLinkedList(Node *&head) {
     Node* current = head;
     while (current) {
