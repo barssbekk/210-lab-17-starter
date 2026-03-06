@@ -127,4 +127,8 @@ void deleteNode(Node *&head, int position) {
             prev = prev->next;
         }
     }
+    if (current) {
+        prev->next = current->next;
+        delete current;
+    }
 }
