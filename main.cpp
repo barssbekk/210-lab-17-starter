@@ -134,4 +134,14 @@ void addTail(Node *&head, float value) {
     Node* newNode = new Node;
     newNode->value = value;
     newNode->next = nullptr;
+
+    if (!head) {
+        head = newNode;
+    } else {
+        Node* current = head;
+        while (current->next) {
+            current = current->next; // Until it reaches nullptr
+        }
+        current->next = newNode; // new tail
+    }
 }
