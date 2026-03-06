@@ -12,6 +12,7 @@ void output(Node *);
 void addFront(Node *&, float);
 void deleteNode(Node *&, int);
 void insertNode(Node *&, int, float);
+void addTail(Node *&, float);
 
 int main() {
     Node *head = nullptr;
@@ -50,16 +51,6 @@ int main() {
     }
     cout << "Choice --> ";
     cin >> entry;
-
-    current = head;
-    prev = head;
-    for (int i = 0; i < (entry); i++)
-        if (i == 0)
-            current = current->next;
-        else {
-            current = current->next;
-            prev = prev->next;
-        }
     //at this point, insert a node between prev and current
     insertNode(head, entry, 10000);
     output(head);
@@ -137,4 +128,10 @@ void insertNode(Node*& head, const int position, const float value) {
 
     newNode->next = current;
     prev->next = newNode;
+}
+
+void addTail(Node *&head, float value) {
+    Node* newNode = new Node;
+    newNode->value = value;
+    newNode->next = nullptr;
 }
