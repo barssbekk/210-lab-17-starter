@@ -119,4 +119,12 @@ void addFront(Node *&head, const int value) {
 void deleteNode(Node *&head, int position) {
     Node *current = head;
     Node *prev = head;
+    for (int i = 0; i < position - 1; ++i) {
+        if (i == 0) {
+            current = current->next;
+        } else {
+            current = current->next;
+            prev = prev->next;
+        }
+    }
 }
