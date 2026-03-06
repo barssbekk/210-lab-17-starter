@@ -115,3 +115,8 @@ void addFront(Node *&head, const int value) {
         head = newNode; // move head to new node, and new node is new head
     }
 }
+
+void deleteNode(Node *&head, int position) {
+    Node *current = head;
+    Node *prev = head;
+}
