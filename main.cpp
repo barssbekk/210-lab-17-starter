@@ -24,6 +24,7 @@ int main() {
         addFront(head, tmp_val);
         // adds node at head
     }
+    // addTail(head, 200);
     output(head);
 
     // deleting a node
