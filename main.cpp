@@ -9,8 +9,9 @@ struct Node {
 };
 
 void output(Node *);
-void addFront(Node *&, int);
+void addFront(Node *&, float);
 void deleteNode(Node *&, int);
+void insertNode(Node *&, int, float);
 
 int main() {
     Node *head = nullptr;
@@ -60,10 +61,7 @@ int main() {
             prev = prev->next;
         }
     //at this point, insert a node between prev and current
-    Node * newnode = new Node;
-    newnode->value = 10000;
-    newnode->next = current;
-    prev->next = newnode;
+    insertNode(head, entry, 10000);
     output(head);
 
     // deleting the linked list
@@ -93,7 +91,7 @@ void output(Node * hd) {
     cout << endl;
 }
 
-void addFront(Node *&head, const int value) {
+void addFront(Node *&head, const float value) {
     Node* newNode = new Node;
     if (!head) {
         head = newNode;
@@ -106,7 +104,7 @@ void addFront(Node *&head, const int value) {
     }
 }
 
-void deleteNode(Node *&head, int position) {
+void deleteNode(Node *&head, const int position) {
     Node *current = head;
     Node *prev = head;
     for (int i = 0; i < position - 1; ++i) {
@@ -123,6 +121,20 @@ void deleteNode(Node *&head, int position) {
     }
 }
 
-void insertNode(Node*& head, int position, int value) {
-    
+void insertNode(Node*& head, const int position, const float value) {
+    Node* current = head;
+    Node* prev = head;
+    for (int i = 0; i < position; ++i) {
+        if (i == 0) {
+            current = current->next;
+        } else {
+            current = current->next;
+            prev = prev->next;
+        }
+    }
+    Node* newNode = new Node;
+    newNode->value = value;
+
+    newNode->next = current;
+    prev->next = newNode;
 }
