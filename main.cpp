@@ -123,4 +123,6 @@ void deleteNode(Node *&head, int position) {
     }
 }
 
-
+void insertNode(Node*& head, int position, int value) {
+    
+}
