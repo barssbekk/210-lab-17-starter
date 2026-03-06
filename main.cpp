@@ -13,6 +13,7 @@ void addFront(Node *&, float);
 void deleteNode(Node *&, int);
 void insertNode(Node *&, int, float);
 void addTail(Node *&, float);
+void deleteLinkedList(Node *&);
 
 int main() {
     Node *head = nullptr;
@@ -24,7 +25,8 @@ int main() {
         addFront(head, tmp_val);
         // adds node at head
     }
-    // addTail(head, 200);
+
+    // addTail(head, 200); // Test
     output(head);
 
     // deleting a node
@@ -57,13 +59,7 @@ int main() {
     output(head);
 
     // deleting the linked list
-    current = head;
-    while (current) {
-        head = current->next;
-        delete current;
-        current = head;
-    }
-    head = nullptr;
+    deleteLinkedList(head);
     output(head);
 
     return 0;
@@ -145,4 +141,14 @@ void addTail(Node *&head, float value) {
         }
         current->next = newNode; // new tail
     }
+}
+
+void deleteLinkedList(Node *&head) {
+    Node* current = head;
+    while (current) {
+        head = current->next;
+        delete current;
+        current = head;
+    }
+    head = nullptr;
 }
